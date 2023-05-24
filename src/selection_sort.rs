@@ -1,3 +1,18 @@
+/// # Selection sort
+///
+/// The seleciton sort algorithm scans the entire array for each element,
+/// resulting in O(n²) complexity.
+///
+/// ## Examples
+///
+/// ```
+/// use algorithms::selection_sort;
+///
+/// let mut list = vec![10, 4, 3, 12];
+/// selection_sort::sort(&mut list);
+///
+/// assert_eq!(vec![3, 4, 10, 12], list);
+/// ```
 pub fn sort<T: Ord>(list: &mut Vec<T>) {
     if list.is_empty() {
         return;
