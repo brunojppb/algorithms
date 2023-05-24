@@ -1,9 +1,9 @@
-pub fn sort(list: &mut Vec<usize>) {
+pub fn sort<T: Ord>(list: &mut Vec<T>) {
     if list.is_empty() {
         return;
     }
 
-    let mut sorted_list: Vec<usize> = Vec::with_capacity(list.len());
+    let mut sorted_list: Vec<T> = Vec::with_capacity(list.len());
 
     for _ in 0..list.len() {
         let smallest_index = find_smallest_index(list);
@@ -14,7 +14,7 @@ pub fn sort(list: &mut Vec<usize>) {
     list.extend(sorted_list);
 }
 
-fn find_smallest_index(list: &[usize]) -> usize {
+fn find_smallest_index<T: Ord>(list: &[T]) -> usize {
     let mut smallest = list.first().unwrap();
     let mut index: usize = 0;
 
